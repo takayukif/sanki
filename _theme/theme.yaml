@@ -1,6 +1,6 @@
-id: "sanki"
-label: "111"
-version: "1.0.1"
+id: "0"
+label: "0"
+version: "1.0.0"
 author_link: "http://sanki-industry.movabletype.io/"
 author_name: "三喜工業"
 description: "0"
@@ -11,6 +11,7 @@ elements:
     data:
       - images
       - js
+      - templates
     importer: blog_static_files
   template_set:
     component: core
@@ -35,7 +36,7 @@ elements:
                 file_template: "%y/%i"
                 preferred: 1
         index:
-          atom:
+          feed_recent:
             filename: atom.xml.mtml
             label: 最新記事のフィード
             outfile: atom.xml
@@ -45,7 +46,7 @@ elements:
             label: インデックスページ
             outfile: index.html
             rebuild_me: 1
-          news:
+          main_index:
             filename: news.html.mtml
             label: ニュース TOP
             outfile: news.html
@@ -89,8 +90,14 @@ elements:
           header:
             filename: header.mtml
             label: header
-          header_news:
-            filename: header_news.mtml
-            label: header_news
+        page:
+          page:
+            filename: page.mtml
+            label: ウェブページ
+            mappings:
+              page:
+                archive_type: Page
+                file_template: "%-c/%-f"
+                preferred: 1
     importer: template_set
 

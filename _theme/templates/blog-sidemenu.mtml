@@ -1,13 +1,21 @@
         <nav class="side-nav">
+          <h1>最新記事</h1>
+          <ul>
+          <mt:Entries lastn="5">
+            <li><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></li>
+          </mt:Entries>
+          </ul>
+        </nav>
+        <nav class="side-nav">
           <h1>カテゴリ</h1>
           <mt:TopLevelCategories>
             <mt:SubCatIsFirst>
           <ul>
             </mt:SubCatIsFirst>
             <mt:If tag="CategoryCount">
-            <li><a href="<$mt:CategoryArchiveLink$>"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If>><$mt:CategoryLabel encode_html="1"$> (<$mt:CategoryCount$>)</a>
+            <li><a href="<$mt:CategoryArchiveLink$>"<mt:If tag="CategoryDescription"> title="<$mt:CategoryDescription remove_html="1" encode_html="1"$>"</mt:If>><$mt:CategoryLabel$> (<$mt:CategoryCount$>)</a>
             <mt:Else>
-            <li><$mt:CategoryLabel encode_html="1"$>
+            <li><$mt:CategoryLabel$>
             </mt:If>
             <$mt:SubCatsRecurse$>
             </li>
