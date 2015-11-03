@@ -33,59 +33,48 @@
 
 <$mt:Include module="header"$>
 
+
+
 <section id="mainvisual">
   <div class="container">
-    <h2><img src="<$mt:BlogURL encode_html="1"$>images/main-img.png" alt=""></h2>
-    <p id="main-text">Movable Typeデザインテーマ「Simple Corporate」のデモサイトです。<br />
-「Simple Corporate」は企業サイトのようなウェブサイトを作成できるレスポンシブ Web デザインを採用したテーマです。
-    </p>
-    <div class="btn-group">
-      <a href="" class="btn btn-primary btn-lg">詳細はこちら&nbsp;<i class="fa fa-arrow-right"></i></a>
-    </div>
+    <h2><img src="/images/home/title.png" alt="三喜工業株式会社" class="img-responsive"></h2>
+
+<h3>
+<span class="br">ゆるぎない技術と精神で、</span>
+<span class="br">高品質を生み出し続け、</span>移り変わる時代を支えていく
+</h3>		
+		
+    <p>
+<span class="br">私たちは鈑金プレス加工（順送プレス単発プレス）をメインに、スポット溶接・タップ加工・組立、</span>
+<span class="br">またブレーキ曲げ加工・小物精密抜き加工等にも、高い技術力で対応し</span>
+「安心できる品質」「ローコスト」「計画通りの納期」を提供します。<br>
+三喜工業は、既存の枠にとらわれず、お客様のニーズに応え未来へ挑戦しつづけます。		
+		</p>
+
+
+
   </div>
 </section>
 
-<section id="top-about">
 
-<mt:Folders>
-  <mt:SetVarBlock name="description"><$mt:FolderDescription$></mt:SetVarBlock>
-  <mt:Unless name="description" eq="footer_link">
-  <section class="webpages">
-    <div class="container">
-      <h3><$mt:FolderLabel$></h3>
-      <p class="webpage-lead"><$mt:FolderDescription$></p>
-      <mt:Pages>
-      <mt:If name="__counter__" op="%" value="4" eq="1"><div class="row"></mt:If>
-        <div class="col-sm-4">
-          <h4><i class="fa fa-lg glyphicon fa-tag"></i><$mt:PageTitle$></h4>
-          <p><$mt:PageExcerpt$></p>
-          <p class="page-detail"><a href="<$mt:PagePermalink$>" class="btn btn-primary">詳細を見る</a></p>
-        </div>
-      <mt:If name="__counter__" op="%" value="4" eq="0"></div></mt:If>
-      <mt:If name="__last__"><mt:If name="__counter__" op="%" value="4" ne="0"></div></mt:If></mt:If>
-      </mt:Pages>
-    </div>
-  </section>
-  </mt:Unless>
-</mt:Folders>
+<section id="top-menu">
+
+<ul>
+<li><a href="/press.html"><img src="/images/home/menu/1-pc.png" alt="プレス加工" class="img-responsive sp-img"></a></li>
+<li><a href="/spot.html"><img src="/images/home/menu/2-pc.png" alt="スポット溶接" class="img-responsive sp-img"></a></li>
+<li><a href="/policy.html"><img src="/images/home/menu/3-pc.png" alt="私たちのポリシー" class="img-responsive sp-img"></a></li>
+</ul>
 
 </section>
 
+
 <section id="top-news">
   <div class="container">
-    <h3>最新ニュース</h3>
     <div class="row">
-    <mt:Entries lastn="4">
-      <a href="<$mt:EntryPermalink$>" class="col-sm-3">
-        <mt:EntryAssets type="image" sort_order="ascend" limit="1">
-           <figure><img src="<$mt:AssetThumbnailURL width="320"$>" alt="<$mt:EntryTitle$>"></figure>
-        <mt:Else>
-           <figure class="noimage"><span>No image</span></mt:Unless></figure>
-        </mt:EntryAssets>
-        <div class="entry-detail">
-          <h1><$mt:EntryTitle$></h1>
-          <p class="entry-excerpt"><$mt:EntryExcerpt$></p>
-        </div>
+    <mt:Entries lastn="5">
+      <a href="<$mt:EntryPermalink$>">
+					<div class="date"><MTEntryDate format="%Y%/%m"></div>
+        <div class="title"><$mt:EntryTitle$></div>
       </a>
     </mt:Entries>
     </div>
@@ -95,12 +84,41 @@
 <$mt:Include module="footer"$>
 
 <$mt:Include module="common_bottom_js"$>
+
+<script src="/js/vegas/vegas.js"></script>
+<link rel="stylesheet" href="/js/vegas/vegas.css">
+
+<script>
+
+$(document).ready(function(){
+
+
+
+$("body").vegas({
+    slides: [
+        { src: "/images/home/bg/1.jpg" },
+        { src: "/images/home/bg/2.jpg" },
+        { src: "/images/home/bg/3.jpg" }
+    ]
+});
+
+
+$("#mainvisual h2").vegas({
+    slides: [
+        { src: "/images/home/bg/sp/1.jpg" },
+        { src: "/images/home/bg/sp/2.jpg" },
+        { src: "/images/home/bg/sp/3.jpg" }
+    ]
+});
+
+
+
+});
+
+</script>
+
 <script src="<$mt:BlogRelativeURL$>js/jquery.tile.min.js"></script>
 <script type="application/javascript">
-$(window).load(function() {
-  $('#top-news .col-sm-3').tile(4);
-  $('.webpages .col-sm-4').tile(3);
-});
 </script>
 
 </body>
