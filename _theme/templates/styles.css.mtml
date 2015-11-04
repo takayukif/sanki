@@ -23,10 +23,26 @@ body {
 
 a {
     color: #fff;
+	text-decoration:underline;
 }
 a:hover,
 a:focus{
     color: #fff;
+}
+a:hover{
+	text-decoration:none;
+}
+
+
+@media (min-width: 768px) {
+br.sp-only{
+	display:none;
+}
+}
+@media (max-width: 768px) {
+br.pc-only{
+	display:none;
+}
 }
 
 
@@ -140,12 +156,12 @@ header {
 .navbar-nav li a:hover{
 	background-image:url(images/navi.png);
 }
-.navbar-nav .li1 a:hover{background-position:0px -68px;}
-.navbar-nav .li2 a:hover{background-position:-127px -68px;}
-.navbar-nav .li3 a:hover{background-position:-254px -68px;}
-.navbar-nav .li4 a:hover{background-position:-393px -68px;}
-.navbar-nav .li5 a:hover{background-position:-520px -68px;}
-.navbar-nav .li6 a:hover{background-position:-647px -68px;}
+.press-p .navbar-nav .li1 a,.navbar-nav .li1 a:hover{background-position:0px -68px;}
+.spot-p .navbar-nav .li2 a,.navbar-nav .li2 a:hover{background-position:-127px -68px;}
+.policy-p .navbar-nav .li3 a,.navbar-nav .li3 a:hover{background-position:-254px -68px;}
+.company-p .navbar-nav .li4 a,.navbar-nav .li4 a:hover{background-position:-393px -68px;}
+.recruit-p .navbar-nav .li5 a,.navbar-nav .li5 a:hover{background-position:-520px -68px;}
+.contact-p .navbar-nav .li6 a,.navbar-nav .li6 a:hover{background-position:-647px -68px;}
 
 
 
@@ -233,17 +249,60 @@ footer {
     padding: 2em 0;
 }
 
+#content .container{
+	max-width:960px;
+	width:auto;
+	margin-left:3%;
+	margin-right:3%;
+}
+
+@media (min-width: 1000px) {
+#content .container{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+}
+
+
+@media (max-width: 768px) {
+
+#content {
+    padding: 2em 0 0px 0;
+}
+
+#content .row > div{
+	margin-bottom:20px;
+}
+
+#content .row .row > div{
+	margin-bottom:15px;
+}
+
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 768px) {
+#content .container{
+	padding-left:0;
+	padding-right:0;
+}
+}
+
+
+
 #content article h1 {
-    margin: 0 0 15px 0;
-    font-size: 30px;
+    margin: 0 0 25px 0;
+    font-size: 32px;
 }
 
 #content article h2 {
-    font-size: 25px;
+    font-size: 27px;
 }
 
 #content article h3 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 #content article h4 {
@@ -251,12 +310,87 @@ footer {
 }
 
 #content article p {
-    margin-bottom: 1em;
+    margin-bottom: 1.3em;
+		font-size:18px;
 }
 
 #content article .row {
     margin-bottom: 1em;
 }
+
+
+.table2{
+	width:100%;
+	font-size:120%;
+}
+
+.table2 tr th,
+.table2 tr td{
+	border-bottom:1px solid #494949;
+	padding:15px;
+	vertical-align:top;
+	font-weight:normal;
+}
+
+.table2 tr:last-child th,
+.table2 tr:last-child td{
+	border-bottom:0;
+}
+
+
+
+.table2 tr th{
+	background:#000000;
+	color:#cccccc;
+}
+.table2 tr td{
+	background-color: rgba(0,0,0,0.6);
+}
+
+.table2 tr td th,
+.table2 tr td td{
+	padding:0 10px 0 0;
+	background:none;
+	border:0;
+	color:#fff;
+}
+
+
+.block{
+	margin-bottom:60px;
+}
+.block:last-child{
+	margin-bottom:0;
+}
+
+
+@media (max-width: 768px) {
+#content article h1 {
+    font-size: 140%;
+    margin: 0 0 15px 0;
+}
+
+#content article h2 {
+    font-size: 130%;
+}
+
+#content article h3 {
+    font-size: 120%;
+}
+#content article p {
+		font-size:100%;
+}
+.table2{
+	width:100%;
+	font-size:100%;
+}
+.table2 tr th,
+.table2 tr td{
+	padding:10px;
+}
+
+}
+
 
 /* ------------------------------------------
                  LOWER CONTENT
@@ -642,7 +776,7 @@ body#sitetop > .vegas-slide{
 }
 
 #mainvisual h2 {
-    margin: 0 auto 20px auto;
+    margin: 0 3% 20px 3%;
 		padding:220px 0 140px 0;
 }
 #mainvisual h2 img{
@@ -652,17 +786,11 @@ body#sitetop > .vegas-slide{
 #mainvisual h3{
 	font-size:120%;
 }
-#mainvisual .br2{
-	display:block;
-}
 #mainvisual p{
 	font-size:100%;
 	line-height:1.8;
 	text-align:left;
 	margin:0 3%;
-}
-#mainvisual p .br{
-	display: inline;
 }
 }
 
@@ -762,6 +890,203 @@ body#sitetop > .vegas-slide{
 }
 #top-news .date{
 	float:none;
+}
+
+
+}
+
+
+
+/* ------------------------------------------
+                 press
+------------------------------------------ */
+
+.press-p{
+	background:url(images/press/bg.jpg) top no-repeat #000;
+	background-size:cover;
+}
+
+#press{
+	margin:150px 0;
+}
+
+#press div{
+}
+
+
+/*
+#press:after{content: ""; display: block; clear: both;}
+
+#press .img{
+	float:left;
+}
+#press .text{
+	width:454px;
+	float:right;
+}
+*/
+
+@media (max-width: 768px) {
+.webpage{
+	background:#000;
+}
+
+#press{
+	margin:0px 0;
+}
+
+}
+
+
+/* ------------------------------------------
+                 spot
+------------------------------------------ */
+
+.spot-p{
+	background:url(images/spot/bg.jpg) top no-repeat #000;
+	background-size:cover;
+}
+
+#spot{
+	margin:150px 0;
+}
+@media (max-width: 768px) {
+#spot{
+	margin:0px 0;
+}
+
+.sp-text-center{
+	text-align:center;
+}
+
+}
+
+
+
+/* ------------------------------------------
+                 policy
+------------------------------------------ */
+
+.policy-p{
+	background:url(images/policy/bg.jpg) top no-repeat #000;
+	background-size:cover;
+}
+
+#policy{
+	margin:70px 0 30px 0;
+}
+
+#policy .name{
+	text-align:right;
+	margin-top:-2.8em;
+}
+
+@media (max-width: 768px) {
+#policy{
+	margin:0px 0;
+}
+
+#policy .name{
+	text-align:right;
+	margin-top:-1.0em;
+}
+
+}
+
+
+/* ------------------------------------------
+                 company
+------------------------------------------ */
+
+.company-p{
+	background:url(images/company/bg.jpg) top no-repeat #000;
+	background-size:cover;
+}
+
+#company{
+	margin:70px 0 30px 0;
+}
+
+#company iframe{
+	margin-bottom:30px;
+}
+
+#outline .button{
+	text-align:right;
+	margin:-5em 0 25px 0;
+}
+
+@media (max-width: 980px) {
+#outline .button{
+	margin:0em 0 25px 0;
+}
+}
+
+
+@media (max-width: 768px) {
+#company{
+	margin:0px 0;
+}
+#company iframe{
+	height:400px;
+	margin-bottom:20px;
+}
+
+
+}
+
+
+
+/* ------------------------------------------
+                 recruit
+------------------------------------------ */
+
+.recruit-p{
+	background:url(images/recruit/bg.jpg) top no-repeat #000;
+	background-size:cover;
+}
+
+#recruit{
+	margin:30px 0 30px 0;
+}
+
+
+@media (max-width: 768px) {
+#recruit{
+	margin:0px 0;
+}
+
+
+}
+
+
+
+/* ------------------------------------------
+                 contact
+------------------------------------------ */
+
+.contact-p{
+	background:url(images/contact/bg.jpg) top no-repeat #000;
+	background-size:cover;
+}
+
+#contact{
+	margin:30px 0 30px 0;
+}
+
+#privacy{
+	padding:10px 20px;
+	border:1px solid #fff;
+	height:15em;
+	overflow-y:scroll;
+}
+#content #privacy p{
+	font-size:100%;
+}
+
+@media (max-width: 768px) {
+#contact{
+	margin:0px 0;
 }
 
 
