@@ -29,6 +29,7 @@ a {
 a:hover,
 a:focus{
     color: #fff;
+	outline:none;
 }
 a:hover{
 	text-decoration:none;
@@ -320,43 +321,6 @@ footer {
 }
 
 
-.table2{
-	width:100%;
-	font-size:120%;
-}
-
-.table2 tr th,
-.table2 tr td{
-	border-bottom:1px solid #494949;
-	padding:15px;
-	vertical-align:top;
-	font-weight:normal;
-}
-
-.table2 tr:last-child th,
-.table2 tr:last-child td{
-	border-bottom:0;
-}
-
-
-
-.table2 tr th{
-	background:#000000;
-	color:#cccccc;
-}
-.table2 tr td{
-	background-color: rgba(0,0,0,0.6);
-}
-
-.table2 tr td th,
-.table2 tr td td{
-	padding:0 10px 0 0;
-	background:none;
-	border:0;
-	color:#fff;
-}
-
-
 .block{
 	margin-bottom:60px;
 }
@@ -381,17 +345,65 @@ footer {
 #content article p {
 		font-size:100%;
 }
+
+}
+
+
+
+.table2{
+	width:100%;
+	font-size:120%;
+}
+
+.table2 tr th,
+.table2 tr td{
+	border-bottom:1px solid #494949;
+	padding:15px;
+	vertical-align:top;
+	font-weight:normal;
+}
+
+
+@media (min-width: 768px) {
+.table2 tr:last-child th,
+.table2 tr:last-child td{
+	border-bottom:0;
+}
+}
+
+
+
+.table2 tr th{
+	background:#000000;
+	color:#cccccc;
+}
+.table2 tr td{
+	background-color: rgba(0,0,0,0.6);
+}
+
+.table2 tr td th,
+.table2 tr td td{
+	padding:0 10px 0 0;
+	background:none;
+	border:0;
+	color:#fff;
+}
+
+@media (max-width: 768px) {
 .table2{
 	width:100%;
 	font-size:100%;
 }
+.table2 tr{
+	display:block;
+}
 .table2 tr th,
 .table2 tr td{
 	padding:10px;
+	display:block;
 }
 
 }
-
 
 /* ------------------------------------------
                  LOWER CONTENT
@@ -816,6 +828,20 @@ body#sitetop > .vegas-slide{
 }
 #top-menu li:nth-child(2){
 }
+
+#top-menu li a,
+.link-button{
+	display:inline-block;
+}
+#top-menu li a:hover,
+.link-button:hover{
+	background:#fff;
+}
+#top-menu li a:hover img,
+.link-button a:hover img{
+	opacity:0.7;
+}
+
 
 @media (min-width: 768px) {
 #top-menu li:nth-child(3){
